@@ -1,7 +1,7 @@
 {
-  "name": "doc-site-template",
-  "version": "1.1.1",
-  "description": "Defense Unicorns documentation site template",
+  "name": "leapfrogai-docs",
+  "version": "1.0.0",
+  "description": "Documentation for LeapfrogAI",
   "license": "Apache 2.0",
   "author": "Defense Unicorns",
   "directories": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "hugo",
-    "build:production": "npm run _hugo -- --minify",
+    "build:production": "npm run build -- --gc --minify",
     "clean": "rm -Rf public resources && hugo mod clean",
     "format:toml": "taplo format '**/**/*.toml'",
     "link-check": "npm run build && linkinator ./public --config .linkinator.config.json ",
