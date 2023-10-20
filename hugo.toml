@@ -40,8 +40,8 @@ proxy = "direct"
   languageName = "English"
 
   [languages.en.params]
-    description = "Docs Template"
-    title       = "Docs Template"
+    description = "LeapfrogAI"
+    title       = "LeapfrogAI"
 
 [params]
   # this merge bring is the theme defaults and allows overriding them if needed.
@@ -49,8 +49,8 @@ proxy = "direct"
 
   archived_version    = false
   copyright           = "Defense Unicorns"
-  github_project_repo = "https://github.com/defenseunicorns/doc-template-site"
-  github_repo         = "https://github.com/defenseunicorns/doc-template-site"
+  github_project_repo = "https://github.com/defenseunicorns/leapfrogai"
+  github_repo         = "https://github.com/defenseunicorns/leapfrogai"
   github_subdir       = "content/en"
   version             = "v1.0.0"
 
@@ -70,7 +70,7 @@ proxy = "direct"
     desc = ""
     icon = "fa-brands fa-github"
     name = "GitHub"
-    url  = "https://github.com/defenseunicorns/doc-site-template"
+    url  = "https://github.com/defenseunicorns/leapfrogai"
 
     ### Other social links
     # [[params.socialLinks]]
