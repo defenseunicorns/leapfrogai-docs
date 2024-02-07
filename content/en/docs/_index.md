@@ -4,4 +4,4 @@ linkTitle: Documentation
 menu: {main: {weight: 20}}
 ---
 
-LeapfrogAI...
+Welcome to the LeapfrogAI Documentation site!
