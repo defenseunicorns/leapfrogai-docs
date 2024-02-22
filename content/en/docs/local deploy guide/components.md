@@ -26,8 +26,8 @@ LeapfrogAI offers several backends for a variety of use cases:
 | ------------------------------------------------------------------------------------------ | ------------------------------- |
 | [llama-cpp-python](https://github.com/defenseunicorns/leapfrogai-backend-llama-cpp-python) | AMD64, Docker, Kubernetes, Zarf |
 | [whisper](https://github.com/defenseunicorns/leapfrogai-backend-whisper)                   | AMD64, Docker, Kubernetes, Zarf |
-| [instructor-xl](https://github.com/defenseunicorns/leapfrogai-backend-instructor-xl)       | AMD64                           |
-| [CUDA](https://github.com/defenseunicorns/leapfrogai-backend-vllm)                         |                                 |
+| [instructor-xl](https://github.com/defenseunicorns/leapfrogai-backend-instructor-xl)       | AMD64, Docker, Kubernetes       |
+| [VLLM](https://github.com/defenseunicorns/leapfrogai-backend-vllm)                         |                                 |
 
 ### Image Hardening
 
@@ -39,4 +39,4 @@ The LeapfrogAI SDK offers a standardized collection of Protobuf and Python utili
 
 ### User Interface
 
-LeapfrogAI offers user-friendly interfaces tailored for common use-cases, including chat, summarization, and transcription, providing accessible options for users to initiate these tasks. Please see the [leapfrog-ui](https://github.com/defenseunicorns/leapfrogai-ui) GitHub repository for additional information.
+LeapfrogAI offers user-friendly interfaces tailored for common use-cases, including chat, summarization, and transcription, providing accessible options for users to initiate these tasks. Please see the [leapfrogai-ui](https://github.com/defenseunicorns/leapfrogai-ui) GitHub repository for additional information.

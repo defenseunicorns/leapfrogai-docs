@@ -245,12 +245,6 @@ zarf package deploy zarf-package-*.tar.zst --confirm
 
 Additional considerations are necessary for GPU deployments:
 
-Prior to `zarf package create --confirm`, you will need to perform a docker build:
-
-```git
-docker build -f Dockerfile.gpu -t ghcr.io/defenseunicorns/leapfrogai/whisper:0.0.1 .
-```
-
 The package deployment command is modified for GPU deployments:
 
 ```git
@@ -273,12 +267,6 @@ zarf package create --confirm
 
 Additional considerations are necessary for GPU deployments:
 
-Prior to `zarf package create --confirm`, you will need to perform a docker build:
-
-```git
-docker build -f Dockerfile.gpu -t ghcr.io/defenseunicorns/leapfrogai/llamacpp:0.0.1 .
-```
-
 The package deployment command is modified for GPU deployments:
 
 ```git
@@ -290,14 +278,14 @@ zarf package deploy zarf-package-*.tar.zst --set GPU_ENABLED=true --confirm
 
 ```git
 # download
-git clone https://github.com/defenseunicorns/leapfrog-ui.git
-cd leapfrog-ui
+git clone https://github.com/defenseunicorns/leapfrogai-ui
+cd leapfrogai-ui
 
 # create
 zarf package create --confirm
 
 # deploy
-cd leapfrog-ui
+cd leapfrogai-ui
 zarf package deploy zarf-package-*.tar.zst --confirm
 # if used without the `--confirm` flag, there are many prompted variables
 # please read the variable descriptions in the zarf.yaml for more details

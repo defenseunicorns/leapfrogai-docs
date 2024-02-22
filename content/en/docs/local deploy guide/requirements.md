@@ -8,17 +8,7 @@ Prior to deploying LeapfrogAI, ensure that the following tools, packages, and re
 
 ## Tested Environments
 
-The following outlines the operating systems, architectures, and system specifications on which we have validated our deployment instructions. The speed and quality of LeapfrogAI, along with its hosted AI models, are significantly influenced by the availability of a robust GPU for offloading model layers.
-
- Differentiated instructions will be provided for two scenarios: "Internet Access" and "Isolated Network":
-
-- **Internet Access:**
-  - Indicates a system capable of fetching and executing remote dependencies from the internet.
-- **Isolated Network:**
-  - Indicates a system that is isolated and lacks connectivity to external networks or remote repositories.
-  - Note that "Isolated Network" instructions are also compatible with devices that have internet access.
-  - For all "Isolated Network" installs, `wget`, `git` `clone` and `zarf package create` commands are assumed to have been completed prior to entering the isolated network.
-  - For "Isolated Network" installs, ensure files and binaries from these commands are stored on a removable media device and subsequently uploaded to the isolated machine.
+The following operating systems, hardware, architectures, and system specifications have been tested and validated for our deployment instructions:
 
 ### Operating Systems
 
@@ -44,6 +34,17 @@ The following outlines the operating systems, architectures, and system specific
 - Linux/AMD64
 - Linux/ARM64
 
+ Differentiated instructions will be provided for two scenarios: "Internet Access" and "Isolated Network":
+
+- **Internet Access:**
+  - Indicates a system capable of fetching and executing remote dependencies from the internet.
+- **Isolated Network:**
+  - Indicates a system that is isolated and lacks connectivity to external networks or remote repositories.
+  - Note that "Isolated Network" instructions are also compatible with devices that have internet access.
+  - For all "Isolated Network" installs, `wget`, `git` `clone` and `zarf package create` commands are assumed to have been completed prior to entering the isolated network.
+  - For "Isolated Network" installs, ensure files and binaries from these commands are stored on a removable media device and subsequently uploaded to the isolated machine.
+  - For specific tool versions, it is recommended to follow the "Isolated Network" instructions.
+  
 ## System Requirements
 
 - Standard Unix-based operating system installed.
@@ -59,6 +60,7 @@ Additional considerations are necessary for GPU deployments:
 
 ## GPU Deployments
 
+- The speed and quality of LeapfrogAI, along with its hosted AI models, are significantly influenced by the availability of a robust GPU for offloading model layers.
 - By default, each backend is configured to request 1x GPU device.
 - Presently, these instructions do not support time-slicing or configuring multi-instance GPU setups.
 - Over-scheduling GPU resources beyond their availability may result in the crash of backend pods.
@@ -68,7 +70,6 @@ Additional considerations are necessary for GPU deployments:
 
 - All `cd` commands should be executed with respect to your project's working directory (PWD) within the development environment. Each new step should be considered as initiating from the root of that directory.
 - For optimal organization, we recommend creating a new PWD named `/leapfrogai` in your home directory and consolidating all components there.
-- For specific tool versions, it is recommended to follow the "Isolated Network" instructions.
 - In cases where a tagged version of a LeapfrogAI or Defense Unicorns release is not desired, the option to build an image from source prior to executing `zarf package create` is available:
 
 ``` bash
