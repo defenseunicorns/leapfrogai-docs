@@ -1,12 +1,11 @@
 ---
-title: Local Deployment Quickstart
+title: Sandbox Deployment
 type: docs
-draft: true
 ---
 
 ## Overview
 
-Tadpole is the quickest method to initiate your LeapfrogAI experience and is exclusively designed for **local testing and development purposes only**. Tadpole executes a `docker compose` build of the LeapfrogAI API, language backend, and user interface. To facilitate a smooth start, there are a collection of straightforward basic recipes. Executing any of these recipes initiates the automated processes within Tadpole, encompassing the build, configuration, and initiation of the necessary components. The culmination of this process results in a locally hosted "Chat with an LLM" demonstration.
+The Tadpole sandbox deployment is the lightweight method to initiate your LeapfrogAI experience and is exclusively designed for **local testing and development purposes only**. Tadpole facilitates a non-Kubernetes deployment that executes a `docker compose` build of the LeapfrogAI API, language backend, and user interface. To ensure a smooth start, there are a collection of straightforward basic recipes. Executing any of these recipes initiates the automated processes within Tadpole, encompassing the build, configuration, and initiation of the necessary components. The culmination of this process results in a locally hosted "Chat with an LLM" demonstration.
 
 ### Prerequisites
 
@@ -19,7 +18,7 @@ Tadpole is the quickest method to initiate your LeapfrogAI experience and is exc
 - `chat-gpu` recipe requires a minimum of 8GB VRAM and a CUDA capable NVIDIA GPU with drivers setup in order to function correctly with Docker.
 
 {{% alert-note %}}
-To set up your Cuda capable NVIDIA GPU, please see the following instructions:
+To set up your CUDA capable NVIDIA GPU, please see the following instructions:
 
 - Prepare your machine for [NVIDIA Driver installation.](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions)
 - Install the proper [NVIDIA Drivers.](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#pre-install)
@@ -30,24 +29,6 @@ To set up your Cuda capable NVIDIA GPU, please see the following instructions:
 {{% /alert-note %}}
 
 ### Operating Systems
-
-<!-- <Tabs>
-<TabItem value="Linux">
-
-CPU and GPU recipes are compatible.
-
-</TabItem>
-<TabItem value="Windows">
-
-CPU recipes are compatible. GPU recipes require that the [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) is installed.
-
-</TabItem>
-<TabItem vlaue="macOS">
-
-Only CPU recipes are compatible at this time.
-
-</TabItem>
-</Tabs> -->
 
 - macOS: Only CPU recipes are compatible at this time.
 - Windows: CPU recipes are compatible. GPU recipes require that the [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) is installed.
@@ -107,7 +88,7 @@ Navigate to `$HOME/.continue/config.json` and modify your [Continue.dev](https:/
 ### Chat-GPU
 
 {{% alert-note %}}
-This requires a Cuda capable NVIDIA GPU with drivers setup.
+This requires a CUDA capable NVIDIA GPU with drivers setup.
 {{% /alert-note %}}
 
 To activate GPU resources and increase response time for your chatbot:

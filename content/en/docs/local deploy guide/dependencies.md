@@ -1,13 +1,23 @@
 ---
-title: Local Environment Predeployment Instructions 
+title: Dependencies 
 type: docs
-draft: true
-weight: 3
+weight: 4
 ---
 
-This documentation addresses the local deployment of LeapfrogAI, a self-hosted generative AI platform. LeapfrogAI extends the diverse capabilities and modalities of AI models to various environments, ranging from cloud-based deployments to servers with ingress and egress limitations. With LeapfrogAI, teams can deploy APIs aligned with OpenAI's API specifications, empowering teams to create and utilize tools compatible with nearly any model and code library available. Importantly, all operations take place locally, ensuring users can maintain the security of their information and sensitive data within their own environments
+This documentation addresses the local deployment dependencies of LeapfrogAI, a self-hosted generative AI platform. LeapfrogAI extends the diverse capabilities and modalities of AI models to various environments, ranging from cloud-based deployments to servers with ingress and egress limitations. With LeapfrogAI, teams can deploy APIs aligned with OpenAI's API specifications, empowering teams to create and utilize tools compatible with nearly any model and code library available. Importantly, all operations take place locally, ensuring users can maintain the security of their information and sensitive data within their own environments
 
 Follow the outlined steps to ensure that your device is configured to execute LeapfrogAI workloads across local development scenarios. Please note that these instructions presume you have root access.
+
+### Host Dependencies
+
+Ensure that the following tools and packages are present in your environment:
+
+- [Jq](https://jqlang.github.io/jq/)
+- [Docker](https://www.docker.com/get-started/)
+- [build-essential](https://packages.ubuntu.com/focal/build-essential)
+- [iptables](https://help.ubuntu.com/community/IptablesHowTo?action=show&redirect=Iptables)
+- [Git](https://git-scm.com/)
+- [procps](https://gitlab.com/procps-ng/procps)
 
 ### Install pyenv
 
@@ -20,14 +30,14 @@ libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
 liblzma-dev libncurses-dev
 ```
 
-### Install Brew
+### Install Homebrew
 
-- Follow the [instructions](https://brew.sh/) to install the homebrew package manager onto your system.
+- Follow the [instructions](https://brew.sh/) to install the Homebrew package manager onto your system.
 
 ### Install Docker
 
 - Follow the [instructions](https://docs.docker.com/engine/install/) to install Docker onto your system.
-- For systems using a Nvidia GPU, it is necessary to modify the Docker runtime to Nvidia. Refer to the GPU instructions below for guidance on making this adjustment.
+- For systems using an NVIDIA GPU, it is necessary to modify the Docker runtime to NVIDIA. Refer to the GPU instructions below for guidance on making this adjustment.
 
 ### Install Kubectl
 
@@ -64,16 +74,16 @@ LeapfrogAI exclusively supports NVIDIA GPUs at this point in time. The following
 
 ### NVIDIA Drivers
 
-- Ensure that the proper NVIDIA drivers are installed.
+- Ensure that the proper [NVIDIA drivers](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-22-04) are installed (>=525.60).
 - Follow the [driver download](https://www.nvidia.com/download/index.aspx) by identifying your hardware from the provided list.
 
 ### CUDA Toolkit
 
-- Follow the [instructions](https://developer.nvidia.com/cuda-downloads) to download the CUDA toolkit.
+- Follow the [instructions](https://developer.nvidia.com/cuda-downloads) to download the CUDA toolkit (>=12.2x). This toolkit is only required on the system that is building the Zarf Packages.
 
 ### NVIDIA Container Toolkit
 
-- Follow the [instructions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt) to download the NVIDIA container toolkit.
+- Follow the [instructions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt) to download the NVIDIA container toolkit (>=1.14).
 - After the successful installation of the toolkit, follow the [toolkit instructions](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt) to verify that your default Docker runtime is configured for NVIDIA.
 - Verify that the default runtime is changed by running the following command:
 
@@ -89,4 +99,4 @@ docker info | grep "Default Runtime"
 
 ### Deploy LeapfrogAI
 
-- After ensuring that all prerequisites and system requirements are fulfilled, please see the LeapfrogAI deployment guide for detailed instructions on deploying LeapfrogAI in your local environment.
+- After ensuring that all system dependencies and requirements are fulfilled, refer to the LeapfrogAI deployment guide for comprehensive instructions on deploying LeapfrogAI within your local environment.

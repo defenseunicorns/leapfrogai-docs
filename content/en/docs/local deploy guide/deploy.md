@@ -1,11 +1,10 @@
 ---
-title: LeapfrogAI Deployment Guide 
+title: Deployment 
 type: docs
-draft: true
-weight: 4
+weight: 5
 ---
 
-To successfully proceed with the installation and deployment of LeapfrogAI, steps must be executed in the order that they are presented in the following instructions. The LeapfrogAI deployment instructions are designed to guide advanced users through the process of deploying the latest production version of LeapfrogAI on Kubernetes.
+To successfully proceed with the installation and deployment of LeapfrogAI, steps must be executed in the order that they are presented in the following instructions. The LeapfrogAI deployment instructions are designed to guide advanced users through the process of deploying the latest version of LeapfrogAI on Kubernetes.
 
 ## Switch to Sudo
 
@@ -90,7 +89,8 @@ cd ../
 zarf init --components git-server --confirm
 
 cd metallb
-zarf package deploy --confirm zarf-package-*.tar.zst```
+zarf package deploy --confirm zarf-package-*.tar.zst
+```
 
 Additional considerations are necessary for GPU deployments:
 

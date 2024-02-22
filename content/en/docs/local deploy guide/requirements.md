@@ -1,15 +1,24 @@
 ---
-title: Predeployment Instructions 
+title: Requirements 
 type: docs
-draft: true
-weight: 2
+weight: 3
 ---
 
 Prior to deploying LeapfrogAI, ensure that the following tools, packages, and requirements are met and present in your environment.
 
 ## Tested Environments
 
-The following outlines the operating systems, architectures, and system specifications on which we have validated our deployment instructions. The speed and quality of LeapfrogAI, along with its hosted AI models, are significantly influenced by the availability of a robust GPU for offloading model layers. Moving forward, our objective is to incorporate instructions and conduct compatibility testing for various other environments, such as ROCm, Metal, and others.
+The following outlines the operating systems, architectures, and system specifications on which we have validated our deployment instructions. The speed and quality of LeapfrogAI, along with its hosted AI models, are significantly influenced by the availability of a robust GPU for offloading model layers.
+
+ Differentiated instructions will be provided for two scenarios: "Internet Access" and "Isolated Network":
+
+- **Internet Access:**
+  - Indicates a system capable of fetching and executing remote dependencies from the internet.
+- **Isolated Network:**
+  - Indicates a system that is isolated and lacks connectivity to external networks or remote repositories.
+  - Note that "Isolated Network" instructions are also compatible with devices that have internet access.
+  - For all "Isolated Network" installs, `wget`, `git` `clone` and `zarf package create` commands are assumed to have been completed prior to entering the isolated network.
+  - For "Isolated Network" installs, ensure files and binaries from these commands are stored on a removable media device and subsequently uploaded to the isolated machine.
 
 ### Operating Systems
 
@@ -18,7 +27,7 @@ The following outlines the operating systems, architectures, and system specific
   - 22.04.3
   - 22.04.4
   - 22.04.5
-- macOS 13.0.1 (Ventura)
+- Pop!_OS 22.04 LTS
 
 ### Hardware
 
@@ -48,33 +57,6 @@ Additional considerations are necessary for GPU deployments:
 - NVIDIA GPU drivers compatible with CUDA (>=12.2).
 - NVIDIA Container Toolkit is available via internet access, pre-installed, or on a mirrored package repository in the air gap.
 
-## Host Dependencies
-
-Ensure that the following tools and packages are present in your environment:
-
-- [Jq](https://jqlang.github.io/jq/)
-- [Docker](https://www.docker.com/get-started/)
-- [build-essential](https://packages.ubuntu.com/focal/build-essential)
-- [iptables](https://help.ubuntu.com/community/IptablesHowTo?action=show&redirect=Iptables)
-- [Git](https://git-scm.com/)
-- [procps](https://gitlab.com/procps-ng/procps)
-
-Additional considerations are necessary for GPU deployments:
-
-- [nvidia-driver](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-22-04) (>=525.60).
-- [nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) (>=1.14).
-
-## Required Tools
-
-These components can be obtained and installed using Zarf, either as binaries or through a remote repository:
-
-- [k3d](https://k3d.io/v5.6.0/) (>= 1.27.x).
-- [Zarf](https://docs.zarf.dev/docs/zarf-overview) (>= 0.30.x).
-
-Additional considerations are necessary for GPU deployments:
-
-- [nvidia-cuda-toolkit](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html) (>= 12.2.x). This toolkit is only required on the system that is building the Zarf Packages.
-
 ## GPU Deployments
 
 - By default, each backend is configured to request 1x GPU device.
@@ -86,20 +68,12 @@ Additional considerations are necessary for GPU deployments:
 
 - All `cd` commands should be executed with respect to your project's working directory (PWD) within the development environment. Each new step should be considered as initiating from the root of that directory.
 - For optimal organization, we recommend creating a new PWD named `/leapfrogai` in your home directory and consolidating all components there.
-- Differentiated instructions will be provided for two scenarios: "Internet Access" and "Isolated Network":
-  - **Internet Access:**
-    - Indicates a system capable of fetching and executing remote dependencies from the internet.
-  - **Isolated Network:**
-    - Indicates a system that is isolated and lacks connectivity to external networks or remote repositories.
-    - Note that "Isolated Network" instructions are also compatible with devices that have internet access.
-    - For all "Isolated Network" installs, `wget`, `git` `clone` and `zarf package create` commands are assumed to have been completed prior to entering the isolated network.
-    - For "Isolated Network" installs, ensure files and binaries from these commands are stored on a removable media device and subsequently uploaded to the isolated machine.
 - For specific tool versions, it is recommended to follow the "Isolated Network" instructions.
-- In cases where a tagged version of a LeapfrogAI or Defense Unicorns release is not desired (e.g., leapfrogai-api:0.3.0), the option to build an image from source prior to executing `zarf package create` is available:
+- In cases where a tagged version of a LeapfrogAI or Defense Unicorns release is not desired, the option to build an image from source prior to executing `zarf package create` is available:
 
 ``` bash
 docker build -t "ghcr.io/defenseunicorns/leapfrogai/<NAME_OF_PACKAGE>:<DESIRED_TAG>" .
-# find and replace any manifests noting the image tag (e.g., zarf.yaml, zarf-config.yaml, etc.)
+# find and replace any manifests referencing the image tag (e.g., zarf.yaml, zarf-config.yaml, etc.)
 zarf package create zarf-package-<NAME_OF_PACKAGE>-*.tar.zst
 ```
 
