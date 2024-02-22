@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 (2024-02-22)
+
+
+### Features
+
+* under construction banner, updates to deps ([#10](https://github.com/defenseunicorns/leapfrogai-docs/issues/10)) ([#11](https://github.com/defenseunicorns/leapfrogai-docs/issues/11)) ([a5904c1](https://github.com/defenseunicorns/leapfrogai-docs/commit/a5904c1ed597854fd42e4f01183a73d6db497913))
+
 ## [1.1.1](https://github.com/defenseunicorns/doc-site-template/compare/v1.1.0...v1.1.1) (2023-10-04)
 
 
