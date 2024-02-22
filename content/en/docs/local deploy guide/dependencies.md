@@ -74,7 +74,7 @@ LeapfrogAI exclusively supports NVIDIA GPUs at this point in time. The following
 
 ### NVIDIA Drivers
 
-- Ensure that the proper [NVIDIA drivers](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-22-04) are installed (>=525.60).
+- Ensure that the proper [NVIDIA drivers](https://www.nvidia.com/download/index.aspx) are installed (>=525.60).
 - Follow the [driver download](https://www.nvidia.com/download/index.aspx) by identifying your hardware from the provided list.
 
 ### CUDA Toolkit
