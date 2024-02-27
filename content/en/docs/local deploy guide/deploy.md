@@ -267,7 +267,13 @@ zarf package create --confirm
 
 Additional considerations are necessary for GPU deployments:
 
-The package deployment command is modified for GPU deployments:
+Prior to `zarf package create --confirm`, you will need to perform a docker build:
+
+```bash
+docker build -f Dockerfile.gpu -t ghcr.io/defenseunicorns/leapfrogai/llamacpp:0.0.1 .
+```
+
+The package deployment command is also modified for GPU deployments:
 
 ```git
 # deploy
